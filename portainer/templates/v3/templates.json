@@ -1,0 +1,81 @@
+{
+  "version": "3",
+  "templates": [
+    {
+      "id": 1001,
+      "type": 3,
+      "title": "TPL-WEB-01",
+      "description": "Basis-Webservice (Nginx) fuer Lern- und Testzwecke",
+      "note": "Geplante Zielumgebung: DOCK_TEST und Edge",
+      "categories": ["webserver", "learning"],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/nginx.png",
+      "repository": {
+        "url": "https://github.com/portainer/templates",
+        "stackfile": "stacks/custom/tpl-web-01/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "WEB_PORT",
+          "label": "Web Port",
+          "default": "8080"
+        }
+      ]
+    },
+    {
+      "id": 1002,
+      "type": 3,
+      "title": "TPL-APP-DB-01",
+      "description": "Mehrschichtige Beispielanwendung (App + Datenbank) mit Persistenz",
+      "note": "Geplante Zielumgebung: DOCK_TEST und DOCK_PROD",
+      "categories": ["application", "database"],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
+      "repository": {
+        "url": "https://github.com/portainer/templates",
+        "stackfile": "stacks/custom/tpl-app-db-01/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "APP_PORT",
+          "label": "App Port",
+          "default": "8081"
+        },
+        {
+          "name": "POSTGRES_DB",
+          "label": "Database Name",
+          "default": "appdb"
+        },
+        {
+          "name": "POSTGRES_USER",
+          "label": "Database User"
+        },
+        {
+          "name": "POSTGRES_PASSWORD",
+          "label": "Database Password"
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "type": 3,
+      "title": "TPL-EDGE-DEMO-01",
+      "description": "Edge-Demo-Template zum Nachweis verteilter Bereitstellung",
+      "note": "Geplante Zielumgebung: Edge Endpoint",
+      "categories": ["edge", "demo"],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
+      "repository": {
+        "url": "https://github.com/portainer/templates",
+        "stackfile": "stacks/custom/tpl-edge-demo-01/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "DEMO_PORT",
+          "label": "Demo Port",
+          "default": "8090"
+        }
+      ]
+    }
+  ]
+}
