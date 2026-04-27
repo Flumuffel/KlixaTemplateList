@@ -32,7 +32,7 @@
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
       "repository": {
-        "url": "https://github.com/portainer/templates",
+        "url": "https://github.com/Flumuffel/KlixaTemplateList",
         "stackfile": "stacks/custom/tpl-app-db-01/docker-compose.yml"
       },
       "env": [
@@ -66,7 +66,7 @@
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
       "repository": {
-        "url": "https://github.com/portainer/templates",
+        "url": "https://github.com/Flumuffel/KlixaTemplateList",
         "stackfile": "stacks/custom/tpl-edge-demo-01/docker-compose.yml"
       },
       "env": [
