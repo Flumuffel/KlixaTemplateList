@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  app:
+    image: nginx:stable-alpine
+    container_name: tpl-app-db-01-app
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "${APP_PORT:-8081}:80"
+    volumes:
+      - app_data:/usr/share/nginx/html
+
+  db:
+    image: postgres:16-alpine
+    container_name: tpl-app-db-01-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "${POSTGRES_DB:-appdb}"
+      POSTGRES_USER: "${POSTGRES_USER:-appuser}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-changeme}"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  app_data:
+  db_data:
