@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  edge-demo:
+    image: traefik/whoami:latest
+    container_name: tpl-edge-demo-01
+    restart: unless-stopped
+    ports:
+      - "${DEMO_PORT:-8090}:80"
